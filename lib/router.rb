@@ -29,18 +29,38 @@ class Router
       when 3
         puts "Please select gossips to delete:"
         @controller.index_gossips
-        puts "You have selected the following gossips to delete:"
-        @controller.index_gossips_to_delete
-        puts "Would you like to proceed?"
-        puts "Enter Y for Yes of N for NO"
+        puts "Enter the number of the gossip to delete:"
         print "> "
-        choice = gets.chomp
-        if choice == "Y"
-          @controller.delete_gossips
-          puts index_gossips - delete_gossips
-        else
-          puts "Wise choice"
-          @controller.create_gossip
+        elem_to_delete = gets.chomp.to_i
+        puts "would you like to select another element?"
+        puts "Y for Yes of N for No"
+        new_add = gets.chomp
+        while new_add != "N"
+          @controller.index_gossips
+          puts "Enter the number of the gossip to delete:"
+          print "> "
+          elem_to_delete = gets.chomp.to_i
+          puts "would you like to select another element?"
+          puts "Y for Yes of N for No"
+          new_add = gets.chomp
+
+          if new_add == "N"
+            puts "You have selected the following gossips to delete:"
+            @controller.gossips_to_delete
+            puts "Would you like to proceed?"
+            puts "Enter Y for Yes of N for NO"
+            print "> "
+            choice = gets.chomp
+            if choice == "Y"
+              @controller.delete_gossips
+              puts index_gossips - delete_gossips
+            else
+              puts "Wise choice"
+              @controller.create_gossip
+            end
+          end
+        end
+
       when  4
         puts "See you later ^^"
         break
@@ -50,4 +70,5 @@ class Router
       end
     end
   end
+
 end

@@ -15,8 +15,15 @@ class Controller
   end
 
   def index_gossips
-    gossip_array = Gossip.all
-    @view.index_gossips(gossip_array)
+    @view.index_gossips(Gossip.all)
+  end
+
+  def gossips_to_delete
+
+  end
+
+  def delete_gossips
+    
   end
 
 end

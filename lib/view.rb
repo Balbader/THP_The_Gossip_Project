@@ -11,6 +11,11 @@ class View
   end
 
   def index_gossips(all_gossips)
-    all_gossips.each {|k, v| puts v}
+    #all_gossips.each_with_index {|k, v, i| puts "#{i} author: #{k}\n gossip: #{v}"}
+    i = 0
+    while i < all_gossips.length
+      puts "#{i} : #{all_gossips[i][0]} said #{all_gossips[i][1]}"
+      i += 1
+    end
   end
 end
