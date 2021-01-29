@@ -1,13 +1,16 @@
 require 'gossip'
+require 'view'
 
 
 class Controller
 
+  def initialize
+    @view = View.new
+  end
+
   def create_gossip
-    gossip = Gossip.new("Michel Marcel", "Marcel a mangé Michel")
-    gossip = Gossip.new("Michel Marcel", "Marcel a mangé Michel")
-    gossip = Gossip.new("Michel Marcel", "Marcel a mangé Michel")
-    gossip = Gossip.new("Michel Marcel", "Marcel a mangé Michel")
+    params = @view.create_gossip
+    gossip = Gossip.new(params[:author], params[:content])
     gossip.save
   end
 

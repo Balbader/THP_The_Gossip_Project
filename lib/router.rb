@@ -13,9 +13,9 @@ class Router
       puts "What do you want to do?"
       puts "1 = Write a gossip"
       puts "4 = Quit the app"
-      answer = gets.chomp.to_i
+      params = gets.chomp.to_i
 
-      case answer
+      case params
       when  1
         puts "You decided to create a gossip"
         @controller.create_gossip
