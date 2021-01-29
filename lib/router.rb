@@ -12,6 +12,7 @@ class Router
     while true
       puts "What do you want to do?"
       puts "1 = Write a gossip"
+      puts "2 = Show all gossips"
       puts "4 = Quit the app"
       params = gets.chomp.to_i
 
@@ -20,6 +21,9 @@ class Router
         puts "You decided to create a gossip"
         @controller.create_gossip
 
+      when 2
+        puts "You decided to show all gossips"
+        @controller.index_gossips
       when  4
         puts "See you later ^^"
         break

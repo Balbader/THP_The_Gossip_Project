@@ -14,4 +14,9 @@ class Controller
     gossip.save
   end
 
+  def index_gossips
+    gossip_array = Gossip.all
+    @view.index_gossips(gossip_array)
+  end
+
 end

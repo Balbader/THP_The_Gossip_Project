@@ -10,4 +10,7 @@ class View
     return params = { content: gossip_content, author: author_name }
   end
 
+  def index_gossips(all_gossips)
+    all_gossips.each {|k, v| puts v}
+  end
 end
