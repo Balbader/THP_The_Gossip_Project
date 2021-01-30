@@ -7,7 +7,7 @@ class View
     puts "What is your gossip?"
     print "> "
     gossip_content = gets.chomp
-    return params = { content: gossip_content, author: author_name }
+    return {content: gossip_content, author: author_name}
   end
 
   def index_gossips(all_gossips)
