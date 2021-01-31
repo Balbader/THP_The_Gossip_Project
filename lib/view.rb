@@ -39,10 +39,4 @@ class View
     return new_index
   end
 
-
-  def print_new_index
-    new_index = delete_gossip(index_gossips(all_gossips))
-    return index_gossips(new_index)
-  end
-
 end
