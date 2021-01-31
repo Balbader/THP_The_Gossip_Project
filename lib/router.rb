@@ -27,11 +27,8 @@ class Router
         @controller.index_gossips
 
       when 3
-        puts "Please select gossips to delete:"
-        @controller.index_gossips
-        puts "Enter the number of the gossip to delete:"
-        print "> "
-        elem_to_delete = gets.chomp.to_i
+        @controller.gossips_to_delete
+=begin
         puts "would you like to select another element?"
         puts "Y for Yes of N for No"
         new_add = gets.chomp
@@ -59,7 +56,7 @@ class Router
               @controller.create_gossip
             end
           end
-        end
+=end
 
       when  4
         puts "See you later ^^"

@@ -19,11 +19,7 @@ class Controller
   end
 
   def gossips_to_delete
-
-  end
-
-  def delete_gossips
-    
+    Gossip.modify_csv(@view.delete_gossip(Gossip.all))
   end
 
 end

@@ -1,3 +1,5 @@
+require 'controller'
+
 class View
   
   def create_gossip
@@ -18,4 +20,29 @@ class View
       i += 1
     end
   end
+
+  def delete_gossip(all_gossips)
+    puts "Select gossip to delete:"
+    puts "Enter gossip number to delete:"
+    print "> "
+    elem_to_delete = gets.chomp.to_i
+
+    i = 0
+    while i < all_gossips.length
+      if all_gossips[i] == elem_to_delete
+        new_index = all_gossips.delete_at(all_gossips[i])
+        i += 1
+      end
+      i += 1
+    end
+    puts "Here is the list: "
+    return new_index
+  end
+
+
+  def print_new_index
+    new_index = delete_gossip(index_gossips(all_gossips))
+    return index_gossips(new_index)
+  end
+
 end

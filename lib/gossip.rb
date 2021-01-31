@@ -21,7 +21,16 @@ class Gossip
     CSV.foreach("db/gossip.csv") do |i|
     all_gossips << i
     end
+  # 3)return all_gossips - on renvoie le résultat
     return all_gossips
   end 
-  # 3)return all_gossips - on renvoie le résultat
+  
+  def self.modify_csv
+    new_list = []
+	CSV.foreach("db/gossip.csv","w") do |i|
+      new_list << i
+    end
+    return new_list
+  end
+
 end
